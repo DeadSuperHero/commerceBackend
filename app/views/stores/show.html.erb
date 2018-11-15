@@ -1,19 +1,6 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Name:</strong>
-  <%= @store.name %>
-</p>
-
-<p>
-  <strong>Logo:</strong>
+<h2>
   <%= @store.logo %>
-</p>
-
-<p>
-  <strong>Slug:</strong>
-  <%= @store.slug %>
-</p>
-
-<%= link_to 'Edit', edit_store_path(@store) %> |
-<%= link_to 'Back', stores_path %>
+  <%= @store.name %>
+</h2>

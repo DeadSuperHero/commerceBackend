@@ -10,6 +10,7 @@ class LineItemsController < ApplicationController
   # GET /line_items/1
   # GET /line_items/1.json
   def show
+    @line_item = LineItem.find(params[:id])
   end
 
   # GET /line_items/new
@@ -27,8 +28,8 @@ class LineItemsController < ApplicationController
     @line_item = LineItem.new(line_item_params)
 
     respond_to do |format|
-      if @line_item.save
-        format.html { redirect_to @line_item, notice: 'Line item was successfully created.' }
+      if @line_item.save!
+        format.html { redirect_to @store_line_item, notice: 'Line item was successfully created.' }
         format.json { render :show, status: :created, location: @line_item }
       else
         format.html { render :new }
@@ -69,6 +70,6 @@ class LineItemsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def line_item_params
-      params.require(:line_item).permit(:image, :name, :description, :price, :store_id_id)
+      params.require(:line_item).permit(:image, :name, :description, :price, :id)
     end
 end

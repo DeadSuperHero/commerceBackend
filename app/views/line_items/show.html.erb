@@ -20,10 +20,5 @@
   <%= @line_item.price %>
 </p>
 
-<p>
-  <strong>Store:</strong>
-  <%= @line_item.store_id %>
-</p>
-
-<%= link_to 'Edit', edit_line_item_path(@line_item) %> |
+<%= link_to 'Edit', edit_store_line_item_path(@line_item) %> |
 <%= link_to 'Back', store_line_items_path %>
